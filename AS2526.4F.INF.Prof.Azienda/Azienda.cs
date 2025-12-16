@@ -17,6 +17,7 @@ namespace AS2526._4F.INF.Prof.Azienda
         { 
             this.nome = nome;
             sedi = new List<Sede>();
+            reparti = new List<Reparto>();
         }
 
         public void SetCEO(Persona ceo)
@@ -36,6 +37,32 @@ namespace AS2526._4F.INF.Prof.Azienda
         public void AddReparto(Reparto reparto)
         {
             reparti.Add(reparto);
+        }
+
+        public List<string> Visualizzati()
+        {
+            var s = new List<string>();
+
+            s.Add($"Azienda : {nome}\n\n");
+            s.Add($"CEO : {ceo.Visualizzati()}\n");
+            s.Add($"CTO : {cto.Visualizzati()}\n");
+
+            foreach (var sede in sedi)
+            {
+                foreach (var info in sede.Visualizzati())
+                {
+                    s.Add(info);
+                }
+            }
+
+            foreach (var reparto in reparti)
+            {
+                foreach (var info in reparto.Visualizzati())
+                {
+                    s.Add(info);
+                }
+            }
+            return  s;
         }
     }
 }

@@ -14,5 +14,10 @@ namespace AS2526._4F.INF.Prof.Azienda
             this.nome = nome;
             this.cognome = cognome;
         }
+
+        public string Visualizzati()
+        {
+            return $"{this.nome} {this.cognome}";
+        }
     }
 }

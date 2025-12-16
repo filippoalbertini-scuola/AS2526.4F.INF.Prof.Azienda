@@ -31,6 +31,10 @@
             sviluppo.SetResponsabile(filippoalbertini);
 
             azienda.AddReparto(sviluppo);
+
+            foreach (var s in azienda.Visualizzati())
+                Console.WriteLine(s);
+            ;
         }
     }
 }
